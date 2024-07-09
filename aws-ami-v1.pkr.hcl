@@ -18,8 +18,8 @@ source "amazon-ebs" "amazon-linux" {
   instance_type   = "t2.micro"
   source_ami      = "ami-06c68f701d8090592"
   ssh_username    = "ec2-user"
-  #vpc_id            = "vpc-01234"
-  #subnet_id         = "subnet-01234"
+  vpc_id            = "vpc-0fcf4b9ffdd0c1e36"
+  subnet_id         = "subnet-0fb24577b00d5cd34"
   #security_group_id = "sg-01234"
   #ami_users       = ["AWS Account ID"]
   ami_regions     = [
