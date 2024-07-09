@@ -5,7 +5,7 @@
 packer {
   required_plugins {
     amazon = {
-      version = ">= 0.0.2"
+      version = ">= 1.3.2"
       source  = "github.com/hashicorp/amazon"
     }
   }
@@ -18,6 +18,9 @@ source "amazon-ebs" "amazon-linux" {
   instance_type   = "t2.micro"
   source_ami      = "ami-06c68f701d8090592"
   ssh_username    = "ec2-user"
+  #vpc_id            = "vpc-01234"
+  #subnet_id         = "subnet-01234"
+  #security_group_id = "sg-01234"
   #ami_users       = ["AWS Account ID"]
   ami_regions     = [
                       "us-east-1"
