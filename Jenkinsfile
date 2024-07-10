@@ -15,16 +15,7 @@ pipeline {
                 }
             }
         }
-        stage('SonarCloud analysis') {
-            stage {
-			    script {
-				    echo  scanning code
-					env.SONAR_KEY = "{SONAR_KEY}"
-					sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar'
-                }
-            }
-        }
-		stage("Building AMI") {
+       stage("Building AMI") {
             steps {
                 withCredentials([
                     [
@@ -37,8 +28,8 @@ pipeline {
                     sh "packer init aws-ami-v1.pkr.hcl"
                     sh "packer build aws-ami-v1.pkr.hcl"
 					
-				}
-             }				
 		}
+             }				
+	}
     }
 }
