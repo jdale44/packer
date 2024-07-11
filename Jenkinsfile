@@ -18,7 +18,7 @@ pipeline {
         stage("scanning code") {
 	    steps {
 		 withSonarQubeEnv(installationName: 'Sonarcloud',credentialsId: 'jenkins') {
-			 sh 'sonar:sonar'
+			 sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.11.0.3922:sonar'
                 }
 	   }
        }
