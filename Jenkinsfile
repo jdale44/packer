@@ -17,9 +17,10 @@ pipeline {
         }
         stage("scanning code") {
 	    steps {
-		 withSonarQubeEnv(credentialsId: 'jenkins') {
-              }
-	  }
+		 withSonarQubeEnv(installationName: 'Production SonarQubeScanner',credentialsId: 'jenkins') {
+			 sh 'mvn clean verify sonar:sonar'
+                }
+	   }
        }
        stage("Building AMI") {
             steps {
