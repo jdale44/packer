@@ -15,7 +15,7 @@ pipeline {
                 }
             }
         }
-       Stage("scanning code") {
+        stage("scanning code") {
 	    steps {
 		 withSonarQubeEnv(credentialsId: 'jenkins') {
               }
