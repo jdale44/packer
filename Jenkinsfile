@@ -17,7 +17,7 @@ pipeline {
         }
         stage("scanning code") {
 	    steps {
-		 withSonarQubeEnv(installationName: 'Production SonarQubeScanner',credentialsId: 'jenkins') {
+		 withSonarQubeEnv(installationName: 'Sonarcloud',credentialsId: 'jenkins') {
 			 sh 'mvn clean verify sonar:sonar'
                 }
 	   }
