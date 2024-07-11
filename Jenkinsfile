@@ -15,6 +15,12 @@ pipeline {
                 }
             }
         }
+       Stage("scanning code") {
+	    steps {
+		 withSonarQubeEnv(credentialsId: 'jenkins') {
+              }
+	  }
+       }
        stage("Building AMI") {
             steps {
                 withCredentials([
